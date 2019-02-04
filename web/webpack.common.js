@@ -22,6 +22,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.exec\.js$/,
+        use: [ 'script-loader' ]
+      },
+      {
         test: /\.pug$/,
         use: ["html-loader?attrs=false", "pug-html-loader"]
       },

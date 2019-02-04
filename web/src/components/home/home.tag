@@ -1,14 +1,20 @@
 home
-  app-sub-header(text='Boards')
   .content
-    .sub-title
-      .left
-        h1 Boards
-      .right
-        app-button-link(to-route="overview", text="Create Board", type="primary")
-    .loader(if='{ loader }')
-    .cards
-      home-card-dashboard(each='{ card in cards }', name='{ card.name }', context_id='{ card.context_id }', series='{ card.series }')
+    .row
+      .col.s12.m3(each="{ item in cards }")
+        .card
+          .card-image
+            img(src='https://dummyimage.com/600x400/000/fff')
+            span.card-title Card Title
+            a.btn-large.btn-floating.halfway-fab.waves-effect.waves-light.blue
+              i.material-icons visibility
+          .card-content
+            p
+              | I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+  .fabStyle
+    a.btn-floating.btn-large.waves-effect.waves-light.indigo
+      i.material-icons add
+
 
   script(type="coffee").
     _self = this

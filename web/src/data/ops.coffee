@@ -52,7 +52,7 @@ getContextBoards = () ->
         ]
       )
       true
-    , 3000
+    , 1000
     return
 
 getOverviewSample = (start_date, end_date, context_id, drivers) ->
@@ -114,10 +114,6 @@ getOverviewSentimentShareDist = (start_date, end_date, context_id, drivers) ->
 # REGISTRAR FUNCIONES AQUI ######
 Ops = {
   getContextBoards
-  getModelsByPublic
-  getOverviewSample
-  getOverviewSampleDist
-  getOverviewSentimentShareDist
 }
 
 export default Ops

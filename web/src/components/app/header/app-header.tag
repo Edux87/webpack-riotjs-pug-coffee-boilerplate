@@ -1,43 +1,28 @@
 app-header
   .navbar-fixed
-    section
-      .left
-        .brand
-          a(href="/")
-            img(src='{ opts.brand_base64 }')
-        .links
-          ul
-            li.active(onclick='{ goHome }')
-              a
-                |  Listening
-            li
-              a(href='badges.html')
-                |  Campaigns
-            li
-              a(onclick='{ goLogin }')
-                |  Addons
-            li
-              a(onclick='{ goLogin }')
-                |  Publish
-      .right
-        .settings
-          a(href="/")
-            i.material-icons settings
-        .welcome
-          .person
-            i.material-icons person
-          .text
-            | Welcome back,
-            = " "
-            span { opts.username }
+    nav
+      .nav-wrapper
+        a.brand-logo(href='/')
+          i.material-icons save
+          | MyWebApp
+        ul.right.hide-on-med-and-down
+          li
+            a(href='sass.html')
+              i.material-icons search
+          li
+            a(href='badges.html')
+              i.material-icons view_module
+          li
+            a(href='collapsible.html')
+              i.material-icons refresh
+          li
+            a(href='mobile.html')
+              i.material-icons more_vert
 
   script(type="coffee").
-
-
     _self = this
-
     _self.on 'mount', ->
       true
 
     @goHome = (e) ->
-      route('/')
+      Route('/')

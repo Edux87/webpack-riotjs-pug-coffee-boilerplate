@@ -1,30 +1,22 @@
+# MAIN FRAMEWORK
+import M from './materialize.js'
+# #######################
+
 import './styles/main.scss'
-import 'riot'
-import route from 'riot-route/tag'
-
-
-
-
-# DATA ENPOINT OPS
-# ###################
 import DataOps from './data/ops.coffee'
+import Riot from 'riot'
+import Route from 'riot-route/tag'
+import './router.tag'
 
+# GLOBAL RESOURCES
 window.DataOps = DataOps
+window.Riot = Riot
+window.Route = Route
 
-# ROUTER ##################
-route.base('#!/')
-window.route = route
+# LOAD COMPONENTS
+import './components/home/index.coffee'
+import './components/app/index.coffee'
 
+Riot.mount 'app-base'
 
-requireAll = (r) ->
-  r.keys().map (f) ->
-    module_name = f.split('/').slice(-1).pop().split('.')[0]
-    riot.mount module_name
-    return
-requireAll require.context './components', true, /\.(tag)$/
-require.context './components', true, /\.(scss)$/
-
-
-# MOUNT ROUTER ############
-# riot.mount 'app-base'
-# riot.mount 'home'
+M.AutoInit()
