@@ -1,0 +1,17 @@
+version: '3.5'
+services:
+  web:
+    build:
+      context: ./web
+    environment:
+      - NODE_ENV=dev
+    volumes:
+     - ./web:/web:rw
+    ports:
+      - '8080:8080'
+    networks:
+      - dockernet
+
+networks:
+  dockernet:
+    external: true

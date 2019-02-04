@@ -1,0 +1,33 @@
+@import './_reset';
+@import './vars';
+@import './_animations';
+
+
+body {
+  font-family: "Oxygen", verdana, tahoma;
+  font-size: 1em;
+  background: $lighter1;
+  letter-spacing: .8px;
+}
+main {
+  flex: 1 0 auto;
+  margin: 0 auto;
+  padding-top: 3.7em;
+  width: 1144px;
+}
+
+.card {
+  border-radius: 5px;
+  border: 0;
+  padding: 0;
+  background: $lighter2;
+  // border: 1px solid lighten($darker1, 40%);
+  box-shadow: 0 0 3px 3px rgba(52, 58, 64, 0.05);
+  .title {
+    text-transform: uppercase;
+  }
+}
+
+.align-left {
+  text-align: left;
+}
