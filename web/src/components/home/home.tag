@@ -1,14 +1,14 @@
 home
   .content
     .row
-      .col.s12.m3(each="{ item in cards }")
+      .col.s12.m2(each="{ item in cards }")
         .card
           .card-image
-            img(src='https://dummyimage.com/600x400/000/fff')
-            span.card-title Card Title
-            a.btn-large.btn-floating.halfway-fab.waves-effect.waves-light.blue
-              i.material-icons visibility
+            img(src='https://placeimg.com/640/480/tech')
+            a.btn-floating.halfway-fab.waves-effect.waves-light.btn-large.blue
+              i.material-icons send
           .card-content
+            span.card-title Card Title
             p
               | I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
   .fabStyle

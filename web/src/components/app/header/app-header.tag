@@ -3,7 +3,6 @@ app-header
     nav
       .nav-wrapper
         a.brand-logo(href='/')
-          i.material-icons save
           | MyWebApp
         ul.right.hide-on-med-and-down
           li
