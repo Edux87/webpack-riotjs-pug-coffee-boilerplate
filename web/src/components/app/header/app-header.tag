@@ -1,22 +1,15 @@
 app-header
-  .navbar-fixed
-    nav
-      .nav-wrapper
-        a.brand-logo(href='/')
-          | MyWebApp
-        ul.right.hide-on-med-and-down
-          li
-            a(href='sass.html')
-              i.material-icons search
-          li
-            a(href='badges.html')
-              i.material-icons view_module
-          li
-            a(href='collapsible.html')
-              i.material-icons refresh
-          li
-            a(href='mobile.html')
-              i.material-icons more_vert
+  nav
+    .nav-wrapper
+      a.brand-logo(href='#') Logo
+      ul#nav-mobile.right.hide-on-med-and-down
+        li
+          a(onclick='{ goVentas }') Ventas
+        li
+          a(onclick='{ goTiendas }') Tiendas
+        li
+          a(onclick='{ goInventario }') Inventario
+
 
   script(type="coffee").
     _self = this
@@ -25,3 +18,12 @@ app-header
 
     @goHome = (e) ->
       Route('/')
+
+    @goInventario = (e) ->
+      Route('/inventario')
+
+    @goTiendas = (e) ->
+      Route('/tienda')
+
+    @goVentas = (e) ->
+      Route('/ventas')

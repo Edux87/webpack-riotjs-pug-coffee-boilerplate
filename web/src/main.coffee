@@ -12,11 +12,17 @@ import './router.tag'
 window.DataOps = DataOps
 window.Riot = Riot
 window.Route = Route
+window.M = M
 
 # LOAD COMPONENTS
 import './components/home/index.coffee'
 import './components/app/index.coffee'
+import './components/inventario/index.coffee'
+import './components/tienda/index.coffee'
+import './components/venta/index.coffee'
+
 
 Riot.mount 'app-base'
 
 M.AutoInit()
+

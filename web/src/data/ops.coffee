@@ -39,20 +39,39 @@ getModelsByPublic = () ->
     headers: 'Content-Type': 'application/graphql'
     body: graphQLParams)
 
-getContextBoards = () ->
+getInventario = () ->
   new Promise (resolve, reject) ->
     setInterval ()->
       resolve(
         data: [
-          (name: 'Board', context_id: 'aa', series: [20, 60, 20])
-          (name: 'Board', context_id: 'ab', series: [10, 40, 50])
-          (name: 'Board', context_id: 'ac', series: [25, 25, 50])
-          (name: 'Board', context_id: 'ad', series: [30, 30, 40])
-          (name: 'Board', context_id: 'ae', series: [20, 30, 40])
+          (name: 'Producto 1', product_id: 'aa', cantidad: 4)
+          (name: 'Producto 2', product_id: 'ab', cantidad: 5)
+          (name: 'Producto 3', product_id: 'ac', cantidad: 3)
+          (name: 'Producto 4', product_id: 'ac', cantidad: 2)
+          (name: 'Producto 5', product_id: 'ac', cantidad: 2)
         ]
       )
       true
-    , 1000
+    , 2000
+    return
+
+getTiendas = () ->
+  new Promise (resolve, reject) ->
+    setInterval ()->
+      resolve(
+        data: [
+          (name: 'Tienda 1', product_id: 'aa', cantidad: 4)
+          (name: 'Tienda 2', product_id: 'ab', cantidad: 5)
+          (name: 'Tienda 2', product_id: 'ab', cantidad: 5)
+          (name: 'Tienda 2', product_id: 'ab', cantidad: 5)
+          (name: 'Tienda 2', product_id: 'ab', cantidad: 5)
+          (name: 'Tienda 3', product_id: 'ac', cantidad: 3)
+          (name: 'Tienda 4', product_id: 'ac', cantidad: 2)
+          (name: 'Tienda 5', product_id: 'ac', cantidad: 2)
+        ]
+      )
+      true
+    , 2000
     return
 
 getOverviewSample = (start_date, end_date, context_id, drivers) ->
@@ -113,7 +132,8 @@ getOverviewSentimentShareDist = (start_date, end_date, context_id, drivers) ->
 
 # REGISTRAR FUNCIONES AQUI ######
 Ops = {
-  getContextBoards
+  getInventario
+  getTiendas
 }
 
 export default Ops

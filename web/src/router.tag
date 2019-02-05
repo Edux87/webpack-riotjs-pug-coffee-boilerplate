@@ -1,6 +1,10 @@
 app-base
   router
-    route(path="/", title="Dashboards")
+    route(path="/")
       home
-    route(path="/details..", title="Overview")
-      detail
+    route(path="/inventario..")
+      inventario
+    route(path="/tienda..")
+      tienda
+    route(path="/ventas")
+      venta
